@@ -1,11 +1,12 @@
 module.exports = {
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   env: {
     browser: true,
     es6: true,
   },
+  extends: ["plugin:react/recommended", "airbnb"],
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: "latest",
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
@@ -16,8 +17,6 @@ module.exports = {
       version: "detect",
     },
   },
-  extends: ["plugin:react/recommended", "airbnb"],
-
   plugins: ["react"],
   rules: {
     "import/no-cycle": 0,
@@ -40,6 +39,11 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     "no-sparse-arrays": 0,
     "no-array-index-key": 0,
+    quotes: ["error", "double"],
     camelcase: 0,
+    "comma-dangle": [0, "always-multiline"],
+    // quotes: ["error", "double"],
+    // "linebreak-style": 0,
+    // "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
   },
 };
